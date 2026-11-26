@@ -1,0 +1,39 @@
+# overlays/dev/kustomization.yaml
+
+
+
+resources:
+
+- ../../base
+
+
+
+namespace: dev
+
+
+
+replicas:
+
+- name: orders-app
+
+  count: 2
+
+
+
+images:
+
+- name: nginx
+
+  newTag: "1.25"
+
+
+
+configMapGenerator:
+
+- name: app-config
+
+  behavior: merge
+
+  literals:
+
+  - ENVIRONMENT=development
