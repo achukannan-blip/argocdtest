@@ -1,13 +1,10 @@
 # base/deployment.yaml
-
 apiVersion: apps/v1
-
 kind: Deployment
-
 metadata:
-
   name: orders-app
-
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
 
   replicas: 1

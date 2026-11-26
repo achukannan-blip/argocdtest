@@ -1,5 +1,3 @@
-# base/configmap.yaml
-
 apiVersion: v1
 
 kind: ConfigMap
@@ -7,6 +5,10 @@ kind: ConfigMap
 metadata:
 
   name: app-config
+
+  annotations:
+
+    argocd.argoproj.io/sync-wave: "-1"
 
 data:
 
